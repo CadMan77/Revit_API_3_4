@@ -38,16 +38,18 @@ namespace Revit_API_3_4
 
                 foreach (Element elem in pipeCollector)
                 {
-                    //if (elem is FamilyInstance)
-                    if (elem is Pipe) // is not PipeType
+                    if (!(elem is PipeType))
+                    //if (elem is Pipe)
                     {                    
                         pipeQty += 1;
-                        
-                        //Parameter outDia = elem.get_Parameter(BuiltInParameter(RBS_PIPE_OUTER_DIAMETER));
-                        //Parameter inDia = elem.get_Parameter(BuiltInParameter(RBS_PIPE_INNER_DIAM_PARAM));
 
-                        Parameter outDia = elem.LookupParameter("Outside Diameter");
-                        Parameter inDia = elem.LookupParameter("Inside Diameter");
+                        //Parameter outDia = elem.LookupParameter("Outside Diameter");
+                        //Parameter inDia = elem.LookupParameter("Inside Diameter");
+
+                        Parameter outDia = elem.get_Parameter(BuiltInParameter.RBS_PIPE_OUTER_DIAMETER);
+                        Parameter inDia = elem.get_Parameter(BuiltInParameter.RBS_PIPE_INNER_DIAM_PARAM);
+
+
 
                         //TaskDialog.Show($"Pipe#{pipeQty}", $"Outside Dia - {outDia.AsValueString()}{Environment.NewLine}Inside Dia - {inDia.AsValueString()}");
 
