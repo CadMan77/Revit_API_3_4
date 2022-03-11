@@ -38,8 +38,8 @@ namespace Revit_API_3_4
 
                 foreach (Element elem in pipeCollector)
                 {
-                    if (!(elem is PipeType))
-                    //if (elem is Pipe)
+                    //if (!(elem is PipeType))
+                    if (elem is Pipe) // exclude Family Symbols (PipeType)
                     {                    
                         pipeQty += 1;
 
@@ -48,8 +48,6 @@ namespace Revit_API_3_4
 
                         Parameter outDia = elem.get_Parameter(BuiltInParameter.RBS_PIPE_OUTER_DIAMETER);
                         Parameter inDia = elem.get_Parameter(BuiltInParameter.RBS_PIPE_INNER_DIAM_PARAM);
-
-
 
                         //TaskDialog.Show($"Pipe#{pipeQty}", $"Outside Dia - {outDia.AsValueString()}{Environment.NewLine}Inside Dia - {inDia.AsValueString()}");
 
