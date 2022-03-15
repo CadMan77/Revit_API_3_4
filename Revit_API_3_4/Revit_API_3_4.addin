@@ -5,6 +5,6 @@
 		<AddInId>83E58980-BD76-4B2D-860F-F161AF9E78E0</AddInId>
 		<FullClassName>RevitAPI_App01.Main</FullClassName>
 		<VendorId>ADSK</VendorId>
-		<Text>RevitAPI 3-4</Text>
+		<Text>RevitAPI 3-4 Заполнение значений общего параметра (трубы)</Text>
 	</AddIn>
 </RevitAddIns>
